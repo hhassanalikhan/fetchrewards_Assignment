@@ -1,17 +1,22 @@
 # fetchrewards_Assignment
 
-I have completed the assignment which baically consists of two activities. The flow of execution for this app i mentioned below,
+I have completed the assignment which baically consists of two activities. The flow of execution for this app is mentioned below,
 
-1- Fitst, **splash screen** calls the GET API.
-2- It then check if the previously saved text file's content is equal to the content of API by comparing the hash code of both the contents?
-  - On the positive outcome of the above-mentioned condition, splash screen starts the new activity.
-  - Otherwie, it rewrites the text file with the new content and updates that value of 'Hash' key of the SharedPreferences.
-3- Then 'MainActivity' is started.
-4- it uses the 'activity_main.xml' as the layout file which contains an expandable list.
-5- It sets the list Adapter as "ExpandableListAdapter"
-  - ExpandableListAdapter.java is a custom adaptr class for the explandable list.
-6. 'MainActivity' then inflates the expandable list by using the following methods,
-  1- Read the text file which contains the data of the API
-  2- Conver text data in to the JSON Array
-  3- Read every item in that array and create a **Hashmap**, <String, String>, with sorted list ids and sorted names.
-  4- Use the hashmap as the content of expandable lists.
+- Fitst, **splash screen** get the data from the API (using RequestQueue).
+
+- It then checks if the previously saved API content in a text file is equal to the content of API by comparing the hash codes of both the strings?
+  - On the positive outcome of the above-mentioned condition, the splash screen starts the new activity.
+  - Otherwise, it rewrites the text file with the new content and updates that value of the 'Hash' key of **SharedPreferences**.
+  - 
+- Then '**MainActivity**' is started.
+
+- It uses the 'activity_main.xml' as the layout file which contains an expandable list. I have also created 2 more layout files to format the new expandable list.
+
+- It sets the list Adapter as "ExpandableListAdapter"
+  - ExpandableListAdapter.java is a custom adapter class for the expandable list.
+  
+- '**MainActivity**' then inflates the expandable list by using the following steps,
+  1- Read the text file which contains the data of the API
+  2- Conver text data into a JSON Array
+  3- Read every item in that array and create a **Hashmap**, <String, String>, with sorted list ids and sorted names.
+  4- Use the hashmap as the content of expandable list's header and child elements.
