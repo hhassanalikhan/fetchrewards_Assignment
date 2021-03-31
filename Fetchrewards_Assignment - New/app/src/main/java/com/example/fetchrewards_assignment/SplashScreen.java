@@ -78,11 +78,6 @@ public class SplashScreen extends AppCompatActivity {
 
                             writeFile(response);
                         }
-//                        SharedPreferences sp = getSharedPreferences("FILE_NAME", MODE_PRIVATE);
-//
-//                        SharedPreferences.Editor edit = sp.edit();
-//                        edit.putString("DataAPI",response);
-//                        edit.apply();
                     }
                 }, new Response.ErrorListener() {
             @Override
@@ -108,14 +103,6 @@ public class SplashScreen extends AppCompatActivity {
             writer.append(response);
             writer.flush();
             writer.close();
-//            SharedPreferences sp = getSharedPreferences("FILE_NAME", MODE_PRIVATE);
-
-//            SharedPreferences.Editor edit = sp.edit();
-//            edit.putString("dataPath", String.valueOf(SplashScreen.this.getFilesDir()));
-
-            //String d2 =
-            // Log.d("Testt: ",d2);
-            //Toast.makeText(MainActivity.this, "Saved your text", Toast.LENGTH_LONG).show();
         }
         catch (Exception e) { }
     }
